@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ND Schedule</string>
+    <string name="title">Notre Dame IN</string>
+    <string name="subtitle">Basketball 2017</string>
+    <string name="sched_item_name">Name</string>
+    <string name="sched_item_date">Game Date</string>
+    <string name="detail_date_text">Game Date and Time</string>
+    <string name="detail_place_text">Game Place</string>
+    <string name="team1_place">Team 1 Hometown</string>
+    <string name="team1_name">Team 1 Name</string>
+    <string name="team1_record">(0-0)</string>
+    <string name="team1_img_descr">Team 1 Image</string>
+    <string name="game_score">0 - 0</string>
+    <string name="game_time">Final</string>
+    <string name="team2_place">Team 2 Hometown</string>
+    <string name="team2_name">Team 2 Name</string>
+    <string name="team2_record">(0-0)</string>
+    <string name="team2_img_descr">Team 2 Image</string>
+    <string name="splash_image">Splash Image</string>
+    <string name="team_image">Team Image</string>
+    <string name="btn_cam_text">Camera</string>
+    <string name="team2loc">Notre Dame</string>
+    <string name="team2name">Fighting Irish</string>
+    <string name="team2record">(21-7)</string>
+    <string name="team2logo">\@drawable/nd</string>
+</resources>

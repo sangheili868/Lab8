@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <TextView
+        android:text="@string/detail_date_text"
+        android:layout_width="match_parent"
+        android:gravity="bottom"
+        android:layout_height="@dimen/detail_date_height"
+        android:layout_marginStart="@dimen/detail_margin_left"
+        android:id="@+id/txt_date" />
+
+    <TextView
+        android:text="@string/detail_place_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/detail_place_height"
+        android:layout_marginTop="@dimen/detail_date_height"
+        android:layout_marginStart="@dimen/detail_margin_left"
+        android:id="@+id/txt_place" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/game_info_height"
+        android:layout_marginTop="@dimen/game_margin_top"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/footbalicon46121"
+            android:id="@+id/img_logo1"
+            android:contentDescription="@string/team1_img_descr" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="@string/team1_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_loc1"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:text="@string/team1_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_team1"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/team1_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_record1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="75dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="@string/game_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_scorepnts"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/game_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_scoreTime"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="@string/team2_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_loc2"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:text="@string/team2_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_team2"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="textEnd"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/team2_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_record2"
+                android:textAlignment="textEnd" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/footbalicon46121"
+            android:id="@+id/img_logo2"
+            android:layout_weight="1"
+            android:contentDescription="@string/team2_img_descr" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="@string/btn_cam_text"
+        android:layout_width="@dimen/cam_btn_width"
+        android:layout_marginStart = "@dimen/btn_cam_left"
+        android:layout_marginTop = "@dimen/btn_cam_top"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_camera"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/alert_light_frame"
+        android:id="@+id/photo_taken"
+        android:layout_weight="1" />
+
+</RelativeLayout>

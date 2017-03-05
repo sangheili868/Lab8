@@ -1,0 +1,8 @@
+Feb 11;Saturday, February 11, 6:00 PM;Purcell Pavilion at the Joyce Center, Notre Dame, Indiana;@drawable/florida_state;Florida State;Seminoles;(21-5);72 - 84;Final
+Feb 14;Tuesday, February 14, 7:00 PM;Silvio O. Conte Forum, Chestnut Hill, Massachusetts;@drawable/bc;Boston College;Eagles;(9-18);76 - 84;Final
+Feb 18;Saturday, February 18, 12:00 PM;PNC Arena, Raleigh, North Carolina;@drawable/ncs;North Carolina State;Wolfpack;(14-14);72 - 81;Final
+Feb 26;Sunday, February 26, 6:30 PM;Purcell Pavilion at the Joyce Center, Notre Dame, Indiana;@drawable/georgia_tech_yellow_jackets;Georgia Tech;Yellow Jackets;(15-11); ; ;
+March 1;Wednesday,March 1, 8:00 PM;Purcell Pavilion at the Joyce Center, Notre Dame, Indiana;@drawable/bc;Boston College;Eagles;(9-18); ; ;
+March 4;Saturday,March 4, 2:00 PM;KFC Yum! Center, Louisville, Kentucky;@drawable/louisville;Louisville;Cardinals;(22-5); ; ;
+March 7;Tuesday, March 7, 12:00 PM;Barclays Center, Brooklyn, New York;@drawable/acc;ACC Tournament; ; ; ; ;
+March 16;Thursday, March 16, 12:00 PM;;@drawable/ncaa;NCAA Tournament; ; ; ; ;
