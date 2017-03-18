@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/women"
+        android:title="Women's Basketball"/>
+    <item android:id="@+id/men"
+        android:title="Men's Basketball"/>
+    <item android:id="@+id/oncampus"
+        android:title="On Campus Event"/>
+    <item android:id="@+id/offcampus"
+        android:title="Off Campus Event"/>
+</menu>

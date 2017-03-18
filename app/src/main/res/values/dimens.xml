@@ -14,4 +14,6 @@
     <dimen name="game_margin_top">50dp</dimen>
     <dimen name="btn_cam_left">200dp</dimen>
     <dimen name="detail_margin_left">15dp</dimen>
+    <dimen name="pic_start">16dp</dimen>
+    <dimen name="pic_bottom">100dp</dimen>
 </resources>

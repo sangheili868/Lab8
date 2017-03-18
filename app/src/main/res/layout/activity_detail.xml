@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:layout_height="match_parent">
+    <!--android:background="@color/colorAccent"-->
 
     <TextView
         android:text="@string/detail_date_text"
@@ -45,16 +45,16 @@
                 android:text="@string/team1_place"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/txt_loc1"
-                android:textColor="@color/colorPrimaryDark" />
+                android:id="@+id/txt_loc1"/>
+                <!--android:textColor="@color/colorPrimaryDark" -->
 
             <TextView
                 android:text="@string/team1_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_team1"
-                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
+            <!--android:textColor="@color/colorPrimaryDark"-->
 
             <TextView
                 android:text="@string/team1_record"
@@ -74,8 +74,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_scorepnts"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
+            <!--android:textColor="@color/colorPrimaryDark"-->
 
             <TextView
                 android:text="@string/game_time"
@@ -96,17 +96,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_loc2"
-                android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="textEnd" />
+            <!--android:textColor="@color/colorPrimaryDark"-->
 
             <TextView
                 android:text="@string/team2_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_team2"
-                android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="textEnd"
                 android:textSize="18sp" />
+            <!--android:textColor="@color/colorPrimaryDark"-->
 
             <TextView
                 android:text="@string/team2_record"
@@ -126,20 +126,26 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@android:drawable/alert_light_frame"
+        android:id="@+id/photo_taken"
+        android:layout_weight="1"
+        android:layout_below="@+id/btn_camera"
+        android:layout_alignStart="@+id/txt_place"
+        android:layout_marginTop="9dp"
+        android:visibility="gone"
+        android:adjustViewBounds="false" />
+
     <Button
         android:text="@string/btn_cam_text"
         android:layout_width="@dimen/cam_btn_width"
-        android:layout_marginStart = "@dimen/btn_cam_left"
-        android:layout_marginTop = "@dimen/btn_cam_top"
         android:layout_height="wrap_content"
         android:id="@+id/btn_camera"
-        android:textAlignment="center" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/alert_light_frame"
-        android:id="@+id/photo_taken"
-        android:layout_weight="1" />
+        android:textAlignment="center"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="150dp"
+        android:layout_toEndOf="@+id/photo_taken" />
 
 </RelativeLayout>
