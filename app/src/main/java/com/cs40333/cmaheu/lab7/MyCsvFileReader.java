@@ -1,4 +1,4 @@
-package com.cs40333.cmaheu.lab6;
+package com.cs40333.cmaheu.lab7;
 
 import android.content.Context;
 

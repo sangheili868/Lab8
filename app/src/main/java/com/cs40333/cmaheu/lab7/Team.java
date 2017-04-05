@@ -1,4 +1,4 @@
-package com.cs40333.cmaheu.lab6;
+package com.cs40333.cmaheu.lab7;
 
 import java.io.Serializable;
 
@@ -12,10 +12,11 @@ public class Team implements Serializable {
     String record;
     String score;
     String timeleft;
+    int id;
 
     Team (String _shortDate, String _longDate, String _location, String _logo,
           String _placeName, String _teamName, String _record, String _score,
-          String _timeleft) {
+          String _timeleft, int _id) {
         setShortDate(_shortDate);
         setLongDate(_longDate);
         setLocation(_location);
@@ -25,6 +26,7 @@ public class Team implements Serializable {
         setRecord(_record);
         setScore(_score);
         setTimeleft(_timeleft);
+        setId(_id);
 
     }
 
@@ -62,6 +64,14 @@ public class Team implements Serializable {
 
     public String getTimeleft() {
         return timeleft;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setShortDate(String shortDate) {

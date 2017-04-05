@@ -1,4 +1,4 @@
-package com.cs40333.cmaheu.lab6;
+package com.cs40333.cmaheu.lab7;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -17,26 +17,26 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayList<String[]> teamstrings;
-
+    DBHelper mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(com.cs40333.cmaheu.lab7.R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        mydb=new DBHelper(getApplicationContext());
+        Toolbar toolbar = (Toolbar) findViewById(com.cs40333.cmaheu.lab7.R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("ND Athletics");
 
         MyCsvFileReader reader = new MyCsvFileReader(this);
-        teamstrings = reader.readCsvFile(R.raw.schedule);
-        final ArrayList<Team> teams = new ArrayList<>();
+        teamstrings = reader.readCsvFile(com.cs40333.cmaheu.lab7.R.raw.schedule);
 
         for (int i = 0; i < teamstrings.size(); i++) {
             String[] istring = teamstrings.get(i);
             try {
-                teams.add(new Team(istring[0], istring[1], istring[2], istring[3],
-                        istring[4], istring[5], istring[6], istring[7], istring[8]));
+                mydb.insertData(new Team(istring[0], istring[1], istring[2], istring[3],
+                        istring[4], istring[5], istring[6], istring[7], istring[8],i));
             } catch (ArrayIndexOutOfBoundsException e) {
                 for (int j = 0; j < istring.length; j++) {
                     Log.d("array out of bounds", Integer.toString(j).concat(istring[j]).concat("\n"));
@@ -45,15 +45,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        ScheduleAdapter scheduleAdapter = new ScheduleAdapter(this, teams);
+        ScheduleAdapter scheduleAdapter = new ScheduleAdapter(this, mydb.getAllTeams());
 
-        ListView scheduleListView = (ListView) findViewById(R.id.scheduleListView);
+        ListView scheduleListView = (ListView) findViewById(com.cs40333.cmaheu.lab7.R.id.scheduleListView);
         scheduleListView.setAdapter(scheduleAdapter);
 
         AdapterView.OnItemClickListener clickListener = new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
-                intent.putExtra("team", teams.get(position)); //where al is your ArrayList holding team information.
+                //intent.putExtra("team", mydb.getATeam(position));
+                intent.putExtra("teamID",position);
                 startActivity(intent);
             }
         };
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(com.cs40333.cmaheu.lab7.R.menu.menu_main, menu);
         return true;
     }
 
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int res_id = item.getItemId();
 
-        if (res_id == R.id.share) {
+        if (res_id == com.cs40333.cmaheu.lab7.R.id.share) {
 // code for sharing the schedule
             Intent shareIntent = new Intent();
             shareIntent.setAction(android.content.Intent.ACTION_SEND);
@@ -80,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "BasketBall Matches");
             shareIntent.putExtra(Intent.EXTRA_TEXT, gameSchedule());
             startActivity(Intent.createChooser(shareIntent, "Share via"));
-        } else if (res_id == R.id.sync) {
+        } else if (res_id == com.cs40333.cmaheu.lab7.R.id.sync) {
 // Snackbar with Try Again action
-            final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorlayout);
+            final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(com.cs40333.cmaheu.lab7.R.id.coordinatorlayout);
             Snackbar snackbar = Snackbar.make(coordinatorLayout, "Sync is not yet implemented", Snackbar.LENGTH_LONG);
             snackbar.setAction("Try Again", new View.OnClickListener() {
                 @Override
@@ -91,10 +92,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             snackbar.show();
-        } else if (res_id == R.id.settings) {
+        } else if (res_id == com.cs40333.cmaheu.lab7.R.id.settings) {
             // Floating Contextual Menu with options
-            registerForContextMenu(findViewById(R.id.toolbar));
-            this.openContextMenu(findViewById(R.id.toolbar));
+            registerForContextMenu(findViewById(com.cs40333.cmaheu.lab7.R.id.toolbar));
+            this.openContextMenu(findViewById(com.cs40333.cmaheu.lab7.R.id.toolbar));
         }
         return true;
     }
@@ -123,20 +124,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu (ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        getMenuInflater().inflate(R.menu.floating_contextual_menu, menu);
+        getMenuInflater().inflate(com.cs40333.cmaheu.lab7.R.menu.floating_contextual_menu, menu);
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
 
         int item_id = item.getItemId();
-        if (item_id == R.id.women) {
+        if (item_id == com.cs40333.cmaheu.lab7.R.id.women) {
             // to be implemented later
-        } else if (item_id == R.id.men) {
+        } else if (item_id == com.cs40333.cmaheu.lab7.R.id.men) {
             // to be implemented later
-        } else if (item_id == R.id.oncampus) {
+        } else if (item_id == com.cs40333.cmaheu.lab7.R.id.oncampus) {
             // to be implemented later
-        } else if (item_id == R.id.offcampus) {
+        } else if (item_id == com.cs40333.cmaheu.lab7.R.id.offcampus) {
             // to be implemented later
         }
 

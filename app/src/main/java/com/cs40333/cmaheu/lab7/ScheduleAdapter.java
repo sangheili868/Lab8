@@ -1,4 +1,4 @@
-package com.cs40333.cmaheu.lab6;
+package com.cs40333.cmaheu.lab7;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,16 +13,16 @@ import java.util.ArrayList;
 
 class ScheduleAdapter extends ArrayAdapter<Team> {
     ScheduleAdapter (Context context, ArrayList<Team> schedule) {
-        super(context, R.layout.schedule_item, schedule);
+        super(context, com.cs40333.cmaheu.lab7.R.layout.schedule_item, schedule);
     }
     public View getView (int position, View convertView, ViewGroup parent) {
         LayoutInflater scheduleInflater = LayoutInflater.from(getContext());
-        View scheduleView = scheduleInflater.inflate(R.layout.schedule_item, parent, false);
+        View scheduleView = scheduleInflater.inflate(com.cs40333.cmaheu.lab7.R.layout.schedule_item, parent, false);
 
         final Team matchItem = getItem(position);
-        TextView teamName = (TextView) scheduleView.findViewById(R.id.scheduleText);
-        TextView dateName = (TextView) scheduleView.findViewById(R.id.dateText);
-        ImageView teamLogo = (ImageView) scheduleView.findViewById(R.id.teamLogo);
+        TextView teamName = (TextView) scheduleView.findViewById(com.cs40333.cmaheu.lab7.R.id.scheduleText);
+        TextView dateName = (TextView) scheduleView.findViewById(com.cs40333.cmaheu.lab7.R.id.dateText);
+        ImageView teamLogo = (ImageView) scheduleView.findViewById(com.cs40333.cmaheu.lab7.R.id.teamLogo);
         String mDrawableName = matchItem.getLogo();
         Context mycontext = getContext();
         int resID = mycontext.getResources().getIdentifier(mDrawableName , "drawable", mycontext.getPackageName());

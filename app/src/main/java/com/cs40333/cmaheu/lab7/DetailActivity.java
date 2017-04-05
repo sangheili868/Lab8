@@ -1,4 +1,4 @@
-package com.cs40333.cmaheu.lab6;
+package com.cs40333.cmaheu.lab7;
 
 import android.Manifest;
 import android.content.Context;
@@ -33,20 +33,23 @@ public class DetailActivity extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
         super.onCreate(bundle);
-        setContentView(R.layout.activity_detail);
+        setContentView(com.cs40333.cmaheu.lab7.R.layout.activity_detail);
+        DBHelper mydb=new DBHelper(getApplicationContext());
 
         int resID;
-        Team teamInfo = (Team) getIntent().getSerializableExtra("team");
+        //Team teamInfo = (Team) getIntent().getSerializableExtra("team");
+        int spot=(int) getIntent().getSerializableExtra("teamID");
+        Team teamInfo = mydb.getATeam(spot);
 
-        TextView date = (TextView) findViewById(R.id.txt_date);
-        TextView place = (TextView) findViewById(R.id.txt_place);
+        TextView date = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_date);
+        TextView place = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_place);
         date.setText(teamInfo.getLongDate());
         place.setText(teamInfo.getLocation());
 
-        ImageView logo1 = (ImageView) findViewById(R.id.img_logo1);
-        TextView loc1 = (TextView) findViewById(R.id.txt_loc1);
-        TextView team1 = (TextView) findViewById(R.id.txt_team1);
-        TextView record1 = (TextView) findViewById(R.id.txt_record1);
+        ImageView logo1 = (ImageView) findViewById(com.cs40333.cmaheu.lab7.R.id.img_logo1);
+        TextView loc1 = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_loc1);
+        TextView team1 = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_team1);
+        TextView record1 = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_record1);
 
         resID = this.getResources().getIdentifier(teamInfo.getLogo(), "drawable", this.getPackageName());
         logo1.setImageResource(resID);
@@ -54,24 +57,24 @@ public class DetailActivity extends AppCompatActivity {
         team1.setText(teamInfo.getTeamName());
         record1.setText(teamInfo.getRecord());
 
-        TextView scorepnts = (TextView) findViewById(R.id.txt_scorepnts);
-        TextView scoreTime = (TextView) findViewById(R.id.txt_scoreTime);
+        TextView scorepnts = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_scorepnts);
+        TextView scoreTime = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_scoreTime);
         scorepnts.setText(teamInfo.getScore());
         scoreTime.setText(teamInfo.getTimeleft());
 
-        ImageView logo2 = (ImageView) findViewById(R.id.img_logo2);
-        TextView loc2 = (TextView) findViewById(R.id.txt_loc2);
-        TextView team2 = (TextView) findViewById(R.id.txt_team2);
-        TextView record2 = (TextView) findViewById(R.id.txt_record2);
+        ImageView logo2 = (ImageView) findViewById(com.cs40333.cmaheu.lab7.R.id.img_logo2);
+        TextView loc2 = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_loc2);
+        TextView team2 = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_team2);
+        TextView record2 = (TextView) findViewById(com.cs40333.cmaheu.lab7.R.id.txt_record2);
 
-        resID = this.getResources().getIdentifier(getString(R.string.team2logo), "drawable", this.getPackageName());
+        resID = this.getResources().getIdentifier(getString(com.cs40333.cmaheu.lab7.R.string.team2logo), "drawable", this.getPackageName());
         logo2.setImageResource(resID);
-        loc2.setText(R.string.team2loc);
-        team2.setText(R.string.team2name);
-        record2.setText(R.string.team2record);
+        loc2.setText(com.cs40333.cmaheu.lab7.R.string.team2loc);
+        team2.setText(com.cs40333.cmaheu.lab7.R.string.team2name);
+        record2.setText(com.cs40333.cmaheu.lab7.R.string.team2record);
         final Context myContext = this;
 
-        Button btn_cam = (Button) findViewById(R.id.btn_camera);
+        Button btn_cam = (Button) findViewById(com.cs40333.cmaheu.lab7.R.id.btn_camera);
         btn_cam.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -119,7 +122,7 @@ public class DetailActivity extends AppCompatActivity {
                     inputStream = getContentResolver().openInputStream(pictureUri);
 
                     Bitmap image = BitmapFactory.decodeStream(inputStream);
-                    ImageView imgView = (ImageView) findViewById(R.id.photo_taken);
+                    ImageView imgView = (ImageView) findViewById(com.cs40333.cmaheu.lab7.R.id.photo_taken);
                     imgView.setImageBitmap(image);
                     imgView.setVisibility(View.VISIBLE);
 
