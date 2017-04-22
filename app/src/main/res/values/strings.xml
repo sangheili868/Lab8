@@ -18,7 +18,7 @@
     <string name="team2_img_descr">Team 2 Image</string>
     <string name="splash_image">Splash Image</string>
     <string name="team_image">Team Image</string>
-    <string name="btn_cam_text">Camera</string>
+    <string name="btn_gallery_text">Gallery</string>
     <string name="team2loc">Notre Dame</string>
     <string name="team2name">Fighting Irish</string>
     <string name="team2record">(21-7)</string>

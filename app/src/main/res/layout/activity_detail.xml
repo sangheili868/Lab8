@@ -132,20 +132,20 @@
         app:srcCompat="@android:drawable/alert_light_frame"
         android:id="@+id/photo_taken"
         android:layout_weight="1"
-        android:layout_below="@+id/btn_camera"
+        android:layout_below="@+id/btn_gallery"
         android:layout_alignStart="@+id/txt_place"
         android:layout_marginTop="9dp"
         android:visibility="gone"
         android:adjustViewBounds="false" />
 
     <Button
-        android:text="@string/btn_cam_text"
+        android:id="@+id/btn_gallery"
         android:layout_width="@dimen/cam_btn_width"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_camera"
-        android:textAlignment="center"
         android:layout_marginStart="80dp"
         android:layout_marginTop="150dp"
-        android:layout_toEndOf="@+id/photo_taken" />
+        android:layout_toEndOf="@+id/photo_taken"
+        android:text="@string/btn_gallery_text"
+        android:textAlignment="center" />
 
 </RelativeLayout>

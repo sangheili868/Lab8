@@ -1,4 +1,4 @@
-package com.cs40333.cmaheu.lab7;
+package com.cs40333.cmaheu.lab8;
 
 import java.io.Serializable;
 

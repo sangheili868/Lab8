@@ -1,4 +1,4 @@
-package com.cs40333.cmaheu.lab7;
+package com.cs40333.cmaheu.lab8;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -22,15 +22,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(com.cs40333.cmaheu.lab7.R.layout.activity_main);
+        setContentView(com.cs40333.cmaheu.lab8.R.layout.activity_main);
 
         mydb=new DBHelper(getApplicationContext());
-        Toolbar toolbar = (Toolbar) findViewById(com.cs40333.cmaheu.lab7.R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(com.cs40333.cmaheu.lab8.R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("ND Athletics");
 
         MyCsvFileReader reader = new MyCsvFileReader(this);
-        teamstrings = reader.readCsvFile(com.cs40333.cmaheu.lab7.R.raw.schedule);
+        teamstrings = reader.readCsvFile(com.cs40333.cmaheu.lab8.R.raw.schedule);
 
         for (int i = 0; i < teamstrings.size(); i++) {
             String[] istring = teamstrings.get(i);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(this, mydb.getAllTeams());
 
-        ListView scheduleListView = (ListView) findViewById(com.cs40333.cmaheu.lab7.R.id.scheduleListView);
+        ListView scheduleListView = (ListView) findViewById(com.cs40333.cmaheu.lab8.R.id.scheduleListView);
         scheduleListView.setAdapter(scheduleAdapter);
 
         AdapterView.OnItemClickListener clickListener = new AdapterView.OnItemClickListener() {
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.cs40333.cmaheu.lab7.R.menu.menu_main, menu);
+        getMenuInflater().inflate(com.cs40333.cmaheu.lab8.R.menu.menu_main, menu);
         return true;
     }
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int res_id = item.getItemId();
 
-        if (res_id == com.cs40333.cmaheu.lab7.R.id.share) {
+        if (res_id == com.cs40333.cmaheu.lab8.R.id.share) {
 // code for sharing the schedule
             Intent shareIntent = new Intent();
             shareIntent.setAction(android.content.Intent.ACTION_SEND);
@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "BasketBall Matches");
             shareIntent.putExtra(Intent.EXTRA_TEXT, gameSchedule());
             startActivity(Intent.createChooser(shareIntent, "Share via"));
-        } else if (res_id == com.cs40333.cmaheu.lab7.R.id.sync) {
+        } else if (res_id == com.cs40333.cmaheu.lab8.R.id.sync) {
 // Snackbar with Try Again action
-            final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(com.cs40333.cmaheu.lab7.R.id.coordinatorlayout);
+            final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(com.cs40333.cmaheu.lab8.R.id.coordinatorlayout);
             Snackbar snackbar = Snackbar.make(coordinatorLayout, "Sync is not yet implemented", Snackbar.LENGTH_LONG);
             snackbar.setAction("Try Again", new View.OnClickListener() {
                 @Override
@@ -92,10 +92,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             snackbar.show();
-        } else if (res_id == com.cs40333.cmaheu.lab7.R.id.settings) {
+        } else if (res_id == com.cs40333.cmaheu.lab8.R.id.settings) {
             // Floating Contextual Menu with options
-            registerForContextMenu(findViewById(com.cs40333.cmaheu.lab7.R.id.toolbar));
-            this.openContextMenu(findViewById(com.cs40333.cmaheu.lab7.R.id.toolbar));
+            registerForContextMenu(findViewById(com.cs40333.cmaheu.lab8.R.id.toolbar));
+            this.openContextMenu(findViewById(com.cs40333.cmaheu.lab8.R.id.toolbar));
         }
         return true;
     }
@@ -124,20 +124,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu (ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        getMenuInflater().inflate(com.cs40333.cmaheu.lab7.R.menu.floating_contextual_menu, menu);
+        getMenuInflater().inflate(com.cs40333.cmaheu.lab8.R.menu.floating_contextual_menu, menu);
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
 
         int item_id = item.getItemId();
-        if (item_id == com.cs40333.cmaheu.lab7.R.id.women) {
+        if (item_id == com.cs40333.cmaheu.lab8.R.id.women) {
             // to be implemented later
-        } else if (item_id == com.cs40333.cmaheu.lab7.R.id.men) {
+        } else if (item_id == com.cs40333.cmaheu.lab8.R.id.men) {
             // to be implemented later
-        } else if (item_id == com.cs40333.cmaheu.lab7.R.id.oncampus) {
+        } else if (item_id == com.cs40333.cmaheu.lab8.R.id.oncampus) {
             // to be implemented later
-        } else if (item_id == com.cs40333.cmaheu.lab7.R.id.offcampus) {
+        } else if (item_id == com.cs40333.cmaheu.lab8.R.id.offcampus) {
             // to be implemented later
         }
 
